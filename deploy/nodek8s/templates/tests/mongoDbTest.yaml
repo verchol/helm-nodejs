@@ -7,15 +7,11 @@ metadata:
 spec:
   containers:
   - name: {{ .Release.Name }}-credentials-test
-    image: {{ .Values.image }}
+    image: "nodek8s:{{default "latest" .Values.image.tag }}"
     env:
       - name: MONGODB_HOST
         value: {{.Values.mongodb.hostname}}
       - name: MONGODB_PORT
         value: "27017"
-        valueFrom:
-          secretKeyRef:
-            name: {{"mongodb"}}
-            key: mongodb-password
-    command: ["sh", "-c", "mocha  --host=$MARIADB_HOST --port=$MARIADB_PORT ./test/mongoE2E.js"]
+    command: ["sh", "-c", "mocha ./test/mongoE2E.js"]
   restartPolicy: Never

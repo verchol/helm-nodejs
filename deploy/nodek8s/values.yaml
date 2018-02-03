@@ -4,8 +4,8 @@
 appversion : 3
 replicaCount: 1
 mongodb :
-  mongo_host: http://mongo
-  mongo_port: 27017
+   hostname: mongo
+   port: 27017
 image:
   repository: nodek8s
   tag: latest

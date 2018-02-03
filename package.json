@@ -1,0 +1,16 @@
+{
+  "name": "helm-flow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "codefresh": "^0.8.6",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.2"
+  }
+}

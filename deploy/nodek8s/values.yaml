@@ -6,10 +6,16 @@ replicaCount: 1
 mongodb :
    hostname: mongo
    port: 27017
+codefresh:
+  pipeline: 5a7653d7a3adc400012db7b9
+  token: 12345678
+  image:
+    repo: codefresh/cli
+    tag: latest
 image:
-  repository: nodek8s
-  tag: latest
-  pullPolicy: IfNotPresent
+  repository: verchol/nodek8s
+  tag: master
+  pullPolicy: Always
 service:
   name: nginx
   type: ClusterIP

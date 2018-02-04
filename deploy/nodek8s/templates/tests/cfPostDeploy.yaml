@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ .Release.Name }}-cf-pipeline"
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+  - name: {{ .Release.Name }}-credentials-test
+    image: "codefresh/cli:{{default "latest" .Values.codefresh.image.tag }}"
+    env:
+      - name: PIPELINE
+        value: {{.Values.codefresh.pipeline}}
+      - name: API_KEY
+        value: {{.Values.codefresh.token}}
+
+    command: ["sh", "-c", "codefresh auth create-context name --api-key $API_KEY && codefresh run $PIPELINE -b master"]
+  restartPolicy: Never

@@ -1,0 +1,21 @@
+apiVersion: v1
+clusters:
+  - name : my-test-cluster
+    cluster:
+    #certificate-authority: /Users/codefresh/.minikube/ca.crt
+      server: https://192.168.99.100:8443
+      certificate-authority: /Users/codefresh/.minikube/ca.crt
+      
+contexts:
+- context:
+    cluster: my-test-cluster
+    user: test
+  name: testauth
+
+current-context: testauth
+kind: Config
+preferences: {}
+users:
+- name: test
+  user:
+    token:  ZXlKaGJHY2lPaUpTVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnBjM01pT2lKcmRXSmxjbTVsZEdWekwzTmxjblpwWTJWaFkyTnZkVzUwSWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXVZVzFsYzNCaFkyVWlPaUprWldaaGRXeDBJaXdpYTNWaVpYSnVaWFJsY3k1cGJ5OXpaWEoyYVdObFlXTmpiM1Z1ZEM5elpXTnlaWFF1Ym1GdFpTSTZJblJsYzNRdGRHOXJaVzR0ZW0xc2NUZ2lMQ0pyZFdKbGNtNWxkR1Z6TG1sdkwzTmxjblpwWTJWaFkyTnZkVzUwTDNObGNuWnBZMlV0WVdOamIzVnVkQzV1WVcxbElqb2lkR1Z6ZENJc0ltdDFZbVZ5Ym1WMFpYTXVhVzh2YzJWeWRtbGpaV0ZqWTI5MWJuUXZjMlZ5ZG1salpTMWhZMk52ZFc1MExuVnBaQ0k2SWpNME5XSTRNRE15TFRCbU5USXRNVEZsT0MxaU1HRXpMVEE0TURBeU56aGlaVFE0TXlJc0luTjFZaUk2SW5ONWMzUmxiVHB6WlhKMmFXTmxZV05qYjNWdWREcGtaV1poZFd4ME9uUmxjM1FpZlEuSUU0ajFUakQyX2VQeTdDVUduMG0ybWd5Q0dGTDFrSld1TmQxNm5EUzBjSTVYTHgxZk9PZDRwbmVWcllRSWIyeHFEaFFDTEx1UlpKRTNtdVVIelJqZTFtTjM5UnBJUXVVUEF6ZnZXay12QWMyVUhWeEE3OHg5SEFQeXNHX1RfY3B1R1oycVFmQ0Y5ektTMVRZTmEwb19HOTZMbjlyZllwanE0VE1EaXJWc0hGSWtRS0EycVhCbXRZdlRnT3lVdkFqVDdrREYyM3d2ZHdNekE2eWUxV3JieWVscnVJSXN3WERieHJBNUJDbXN0Wlo3TTgwVXFXQXoxaFZsSnU2SkxlRFNITFFjVGxsdHUxcC0xb01iS0FwWFZONExUMGdXaHVsanU0eXBkWkI4TEJ4SjF4UGxBeThhUUlTWVUwMnZ2M0J2dDhzWVNEN1QzR3E3TUk0cVptcDBB

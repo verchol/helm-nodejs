@@ -1,0 +1,11 @@
+{
+    "kind": "Secret2",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "codefresh-token",
+        "annotations": {
+            "kubernetes.io/service-account.name": "codefresh"
+        }
+    },
+    "type": "kubernetes.io/service-account-token"
+}

@@ -3,16 +3,21 @@
 
 
 const express = require('express');
+const DB = require('./dbManager');
 const app = express();
-let sconnectToMong = (data)=>{
 
-}
 app.get('/prob', (req, res)=>{
    res.send(200);
 })
-app.get('/healthz', (req, res)=>{
-  res.send(200);
-  r
+app.get('/healthz', async (req, res)=>{
+  try{
+  db = await DB.connect({});
+  let status = await DB.insertDocuments(db, []);
+  res.send(status ? 200  : 500);
+}catch(e){
+    console.log(`exception {e}`);
+    res.send(500);
+}
 })
 
 app.get('/', (req, res)=>{
@@ -20,5 +25,5 @@ app.get('/', (req, res)=>{
   res.send('demo nodejs-k8s service');
 })
 app.listen(process.env.PORT||3000, (err, data)=>{
-  console.log(`connected to ${process.env.PORT}`);
+  console.log(`connected to ${process.env.PORT || 3000}`);
 })

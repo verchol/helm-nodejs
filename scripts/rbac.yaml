@@ -2,8 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-
   name: cf1-role2
+  namespace: cf1
 rules:
 - apiGroups: [""]
   resources: ["configmaps"]
@@ -14,6 +14,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: role-grantor-cf2
+  namespace: cf1
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role

@@ -18,7 +18,7 @@ image:
   pullPolicy: Always
 service:
   name: nodek8s
-  type: ClusterIP
+  type: LoadBalancer
   externalPort: 80
   internalPort: 3000
 ingress:
